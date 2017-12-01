@@ -31,9 +31,11 @@ public class SearchController {
         } else {
             jobs = JobData.findByColumnAndValue(searchType, searchTerm);
         }
-
+int jobscount=0;
+        jobscount=jobs.size();
         model.addAttribute("columns", ListController.columnChoices);
         model.addAttribute("jobs", jobs);
+        model.addAttribute("jobscount", jobscount);
         return  "search";
     }
 
